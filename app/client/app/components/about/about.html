@@ -1,5 +1,13 @@
 <navbar></navbar>
 <h1>{{ $ctrl.name }}</h1>
 <section>
-  About us.
+    About us.
 </section>
+<div>
+    <div>
+        <button ng-click='$ctrl.add()'>+</button>
+        <button ng-click='$ctrl.sub()'>-</button>
+    </div>
+</div>
+<div ui-view></div>
+<footer></footer>

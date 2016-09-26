@@ -6,7 +6,7 @@ let aboutComponent = {
   restrict: 'E',
   bindings: {},
   template,
-  controller
+  controller: controller
 };
 
 export default aboutComponent;
