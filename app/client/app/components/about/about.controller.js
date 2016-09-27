@@ -1,8 +1,13 @@
 class AboutController {
-	constructor($state) {
+	constructor($location, $stateParams) {
 		"ngInject";
 		this.name = 'about';
-		this.currentNum = 5;
+		if ($stateParams.num) {
+			this.currentNum = $stateParams.num
+		} else {
+			this.currentNum = 0;
+		}
+		this.location = $location;
 	}
 
 	add() {
@@ -16,8 +21,14 @@ class AboutController {
 	}
 
 	init() {
-		$state.go('.', { num: this.currentNum }, { notify: false });
-		conole.log(this.currentNum);
+		console.log(this.location.path());
+		var tmp = this.location.path().split('/');
+		if (tmp.lenght < 2) {
+			tmp.push(this.currentNum);
+		} else {
+			tmp[2] = this.currentNum;
+		}
+		this.location.path(tmp.join('/'));
 	}
 }
 
