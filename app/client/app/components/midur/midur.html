@@ -1,0 +1,69 @@
+<div>
+    <h1>{{ $ctrl.name }}</h1>
+    <table>
+        <tr>
+            <th>
+                start time
+            </th>
+            <th>
+                end time
+            </th>
+            <th>
+                source Id
+            </th>
+            <th>
+                group name
+            </th>
+            <th>
+                comments
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" ng-model="mid.startTime">
+            </td>
+            <td>
+                <input type="text" ng-model="mid.endTime">
+            </td>
+            <td>
+                <input type="text" ng-model="mid.sourceId">
+            </td>
+            <td>
+                <input type="text" ng-model="mid.groupName">
+            </td>
+            <td>
+                <textarea ng-model="mid.comments"></textarea>
+            </td>
+            <td>
+                <button ng-click='mid.addMidur()'>Add midur</button>
+            </td>
+        </tr>
+    </table>
+    <button ng-click="midurim = mid.getMidurim()">get midurim</button>
+    <table ng-if="(midurim)" ng-model="midurim">
+        <tr>
+            <th>
+                start time
+            </th>
+            <th>
+                end time
+            </th>
+            <th>
+                source Id
+            </th>
+            <th>
+                group name
+            </th>
+            <th>
+                comments
+            </th>
+        </tr>
+        <tr ng-repeat="midur in midurim">
+            <td>{{midur.startTime}}</td>
+            <td>{{midur.endTime}}</td>
+            <td>{{midur.sourceId}}</td>
+            <td>{{midur.groupName}}</td>
+            <td>{{midur.comments}}</td>
+        </tr>
+    </table>
+</div>

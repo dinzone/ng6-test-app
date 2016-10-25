@@ -1,0 +1,17 @@
+<div>
+    <h1>{{ cr.name }}</h1>
+    <div ng-repeat="car in cr.cars">
+        <div>id: {{car.id}}</div>
+        <div>company: {{car.company}}</div>
+        <div>model: {{car.model}}</div>
+        <div>wheel drive: {{car.wheelDrive}}</div>
+        <div>hp: {{car.hp}}</div>
+        <div>tourqe: {{car.tourqe}}</div>
+        <div>engine: {{car.engine}}</div>
+        <div>_____________________________________________________</div>
+    </div>
+    <input type="text" ng-model="cr.carId">
+    <button ng-click="cr.alertCar()">alert!</button>
+    <input type="text" ng-model="cName">
+    <button ng-click="cr.changeName(cName)">change the name</button>
+</div>
